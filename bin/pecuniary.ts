@@ -9,6 +9,7 @@ new PecuniaryPipelineStack(app, 'pecuniary-pipeline', {
   env: { account: '524849261220', region: 'us-east-1' },
 });
 
+// Create dev stack
 new PecuniaryPipelineStage(app, 'Dev', {
   env: { account: process.env.CDK_DEFAULT_ACCOUNT, region: process.env.CDK_DEFAULT_REGION },
 });

@@ -3,13 +3,9 @@ import * as lambda from '@aws-cdk/aws-lambda';
 import { CfnOutput, Construct, Stack, StackProps } from '@aws-cdk/core';
 import * as path from 'path';
 
-/**
- * A stack for our simple Lambda-powered web service
- */
+// Pecuniary web app
 export class PecuniaryAppStack extends Stack {
-  /**
-   * The URL of the API Gateway endpoint, for use in the integ tests
-   */
+  // The URL of the API Gateway endpoint, for use in the integ tests
   public readonly urlOutput: CfnOutput;
 
   constructor(scope: Construct, id: string, props?: StackProps) {

@@ -11,17 +11,18 @@ export class PecuniaryPipelineStack extends Stack {
 
       crossAccountKeys: true,
 
-      // How it will be built and synthesized
+      // Synthesize CDK
       synth: new ShellStep('Synth', {
-        // Where the source can be found
-        input: CodePipelineSource.gitHub('eric-bach/cdkpipelines-demo', 'main'),
+        // Pecuniary application stack
+        // TODO Rename the repo once it is moved
+        input: CodePipelineSource.gitHub('eric-bach/pecuniary-v3', 'main'),
 
         // Install dependencies, build and run cdk synth
         commands: ['npm ci', 'npm run build', 'npx cdk synth'],
       }),
     });
 
-    // This is where we add the application stages
+    // Dev environment stage with tests
     const dev = new PecuniaryPipelineStage(this, 'Dev', {
       env: { account: '524849261220', region: 'us-east-1' },
     });
@@ -41,6 +42,7 @@ export class PecuniaryPipelineStack extends Stack {
       ],
     });
 
+    // Prod environment
     pipeline.addStage(
       new PecuniaryPipelineStage(this, 'Prod', {
         env: { account: '830221499166', region: 'us-west-2' },

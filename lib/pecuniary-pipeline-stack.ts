@@ -15,7 +15,7 @@ export class PecuniaryPipelineStack extends Stack {
       synth: new ShellStep('Synth', {
         // Pecuniary application stack
         // TODO Rename the repo once it is moved
-        input: CodePipelineSource.gitHub('eric-bach/pecuniary-v3', 'main'),
+        input: CodePipelineSource.gitHub('eric-bach/pecuniary-pipeline', 'main'),
 
         // Install dependencies, build and run cdk synth
         commands: ['npm ci', 'npm run build', 'npx cdk synth'],

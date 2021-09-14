@@ -1,6 +1,6 @@
 # Pecuniary Pipeline
 
-CDK pipeline for deploying [Pecuniary](https://github.com/eric-bach/pecuniary-v3) application
+CDK pipeline for deploying [Pecuniary](https://github.com/eric-bach/pecuniary) application
 
 ## Getting Started
 
@@ -10,7 +10,7 @@ CDK pipeline for deploying [Pecuniary](https://github.com/eric-bach/pecuniary-v3
 
 ### Deploy via CDK CLI
 
-See [pecuniary-v3](https://github.com/eric-bach/pecuniary-v3/README.md))
+See [pecuniary](https://github.com/eric-bach/pecuniary/README.md)
 
 ### Setup CodePipeline (optional)
 
